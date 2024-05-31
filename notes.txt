@@ -1,0 +1,1 @@
+Write a program that inputs individual grades for various types of content to calculate the final grades using a rubric.

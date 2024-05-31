@@ -1,0 +1,3 @@
+/Users/alex/projects/syllabus_Calculate/cmake-build-debug/CMakeFiles/syllabus_Calculate.dir
+/Users/alex/projects/syllabus_Calculate/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alex/projects/syllabus_Calculate/cmake-build-debug/CMakeFiles/rebuild_cache.dir
