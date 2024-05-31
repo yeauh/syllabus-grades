@@ -3,4 +3,6 @@ project(syllabus_Calculate)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(syllabus_Calculate main.cpp)
+add_executable(syllabus_Calculate main.cpp
+        calculate.h
+        calculate.h)
