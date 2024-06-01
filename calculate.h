@@ -48,7 +48,7 @@ void calculateGrades::tests(float a, float b, float c) {
         temp = (a+b)/2;
     }
     testGrade = temp * testWeight;
-    std::cout << testGrade << " out of .3";
+    std::cout << testGrade << " out of 30";
 }
 
 void calculateGrades::homework(float a, float b) {
