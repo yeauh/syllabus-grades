@@ -4,61 +4,74 @@
 
 #ifndef CALCULATE_H
 #define CALCULATE_H
-
+#include <iostream>
+static float testGrade = 0.0;
+static float hwGrade = 0.0;
+static float examGrade = 0.0;
+static float attGrade = 0.0;
+static float labGrade = 0.0;
 class calculateGrades {
 public:
-    float testW = 0;
+
+    static void tests(float a, float b, float c);
+    static void homework(float a, float b);
+    static void exams(float a, float b);
+    static void att(float a);
+    static void labs(float a, float b);
     calculateGrades();
-    float tests(float a, float b, float c);
-    float homework(float a, float b);
-    float exams(float a, float b);
-    float att(float a);
-    float labs(float a, float b);
+
     ~calculateGrades();
 
 private:
-    float testWeight = .30;
-    float hwWeight = .15;
-    float examWeight = .4;
-    float attWeight = .05;
-    float labWeight = .10;
+    constexpr static const float testWeight = .30;
+    constexpr static const float hwWeight = .15;
+    constexpr static const float examWeight = .4;
+    constexpr static const float attWeight = .05;
+    constexpr static const float labWeight = .10;
 
 
 };
 
-calculateGrades::calculateGrades() = default;
+calculateGrades::calculateGrades() {
+    float finalGrade = testGrade + hwGrade + examGrade + attGrade + labGrade;
+    std::cout << finalGrade;
+}
+// add the final else-if statements
+void calculateGrades::tests(float a, float b, float c) {
+    float temp;
 
-float calculateGrades::tests(float a, float b, float c) {
-    float temp = 0;
-    if(a<b<c) {
+    if (a < b && a < c) {
         temp = (b+c)/2;
+    } else if (b < a && b < c) {
+        temp = (a+c)/2;
+    } else {
+        temp = (a+b)/2;
     }
-    testW = temp * testWeight;
-    return 0;
+    testGrade = temp * testWeight;
+    std::cout << testGrade << " out of .3";
 }
 
-float calculateGrades::homework(float a, float b) {
+void calculateGrades::homework(float a, float b) {
     float temp = (a+b)/2;
-    return temp * hwWeight;
+    hwGrade = temp * hwWeight;
 }
 
 calculateGrades::~calculateGrades() {
 
 }
 
-float calculateGrades::exams(float a, float b) {
+void calculateGrades::exams(float a, float b) {
     float temp = (a+b)/2;
-    return temp * examWeight;
+    examGrade = temp * examWeight;
 }
 
-float calculateGrades::att(float a) {
-    float temp = a * attWeight;
-    return temp;
+void calculateGrades::att(float a) {
+    examGrade = a * attWeight;
 }
 
-float calculateGrades::labs(float a, float b) {
+void calculateGrades::labs(float a, float b) {
     float temp= (a+b)/2;
-    return temp * labWeight;
+    labGrade = temp * labWeight;
 }
 
 
