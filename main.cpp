@@ -4,7 +4,6 @@
 using namespace std;
 
 int main() {
-    calculateGrades grades;
     float t1, t2, t3;
     float hw1, hw2;
     float exam1, exam2;
@@ -37,6 +36,7 @@ int main() {
     cout << "Lab 2: "; cin >> l2;
     calculateGrades::labs(l1,l2);
 
-    ;
+    calculateGrades::finalGrade();
+
     return 0;
 }
