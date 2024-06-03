@@ -3,6 +3,8 @@
 
 using namespace std;
 
+char letterGrade(int* aPtr);
+
 int main() {
     float t1, t2, t3;
     float hw1, hw2;
@@ -38,5 +40,33 @@ int main() {
 
     calculateGrades::finalGrade();
 
+    int *intGradePtr = calculateGrades::finalGrade();
+
+//    cout << "the letter grade is " << letterGrade(intGradePtr);
+    try {
+        cout << "the letter grade is " << letterGrade(intGradePtr);
+    }
+    catch (const exception& e) {
+        // Catch the exception and print the error message
+        cerr << "Caught exception: " << e.what() << endl;
+    }
     return 0;
+}
+
+char letterGrade(int* aPtr) {
+    int * aValue = aPtr;
+    char letter = 'a';
+    switch (*aValue) {
+        case 90 ... 100:
+            letter = 'A';
+        case 80 ... 89:
+            letter = 'B';
+        case 70 ... 79:
+            letter = 'C';
+        case 60 ... 69:
+            letter = 'D';
+        case 0 ... 59:
+            letter = 'F';
+    }
+    return letter;
 }

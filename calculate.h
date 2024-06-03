@@ -19,7 +19,7 @@ public:
     static void exams(float a, float b);
     static void att(float a);
     static void labs(float a, float b);
-    static void finalGrade();
+    static float * finalGrade();
     calculateGrades();
 
     ~calculateGrades() = default;
@@ -32,7 +32,6 @@ private:
     constexpr static const float labWeight = .10;
 
 
-    char letterGrade();
 };
 
 calculateGrades::calculateGrades() = default;
@@ -79,14 +78,11 @@ void calculateGrades::labs(float a, float b) {
     labGrade = temp * labWeight;
 }
 
-void calculateGrades::finalGrade() {
+float * calculateGrades::finalGrade() {
     float finalGradeNum = testGrade + hwGrade + examGrade + attGrade + labGrade;
     std::cout << "final grade(number): " << finalGradeNum;
+    int finalPtr = finalGradeNum;
+    return &finalGradeNum;
 }
-
-char calculateGrades::letterGrade() {
-
-}
-
 
 #endif //CALCULATE_H
